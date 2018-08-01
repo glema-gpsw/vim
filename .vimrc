@@ -172,4 +172,4 @@ let g:NERDTrimTrailingWhitespace = 1
 " use Shift TAB to toggle comments
 noremap <S-Tab> :call NERDComment(0,"toggle") <CR>
 vmap <C-c> "+y
-
+map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
