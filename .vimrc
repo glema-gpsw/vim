@@ -13,7 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'jnurmine/Zenburn'
