@@ -173,3 +173,5 @@ let g:NERDTrimTrailingWhitespace = 1
 noremap <S-Tab> :call NERDComment(0,"toggle") <CR>
 vmap <C-c> "+y
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <C-n> <C-a>:w<cr>
+nnoremap <C-p> <C-x>:w<cr>
