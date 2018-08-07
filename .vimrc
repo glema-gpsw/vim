@@ -175,3 +175,7 @@ vmap <C-c> "+y
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <C-n> <C-a>:w<cr>
 nnoremap <C-p> <C-x>:w<cr>
+:map <C-j> ciw<C-r>0<ESC>
+" use change inside word instead of change word
+" we can still use cW for cw
+nnoremap cw ciw
