@@ -24,7 +24,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'heavenshell/vim-pydocstring'
 Bundle 'Valloric/YouCompleteMe'
+Plugin 'vimwiki/vimwiki'
 
 " ...
 
@@ -50,7 +52,7 @@ nnoremap <space> za
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set textwidth=79
+"set textwidth=79
 set expandtab
 set autoindent
 set fileformat=unix
@@ -58,7 +60,7 @@ au BufNewFile,BufRead *.py:
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
-    \ set textwidth=79
+"    \ set textwidth=79
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
@@ -148,6 +150,10 @@ endfunction
 tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
 set mouse=a
 
+" Valloric
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
+
 " NERDCommenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -179,3 +185,19 @@ nnoremap <C-p> <C-x>:w<cr>
 " use change inside word instead of change word
 " we can still use cW for cw
 nnoremap cw ciw
+" open NerdTree with Ctrl-n
+nnoremap <C-n> :NERDTreeToggle<CR>
+nmap =j :%!python -m json.tool<CR>
+nmap yr :call system("ssh -p 2222 127.0.0.1 pbcopy", @*)<CR>
+vmap yr :call system("ssh -p 2222 127.0.0.1 pbcopy", @*)<CR>
+let g:vimwiki_list = [{
+	\ 'path': '~/vimwiki',
+	\ 'template_path': '~/vimwiki/templates/',
+	\ 'template_default': 'default',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md',
+	\ 'path_html': '~/vimwiki/site_html/',
+	\ 'custom_wiki2html': 'vimwiki_markdown',
+	\ 'template_ext': '.tpl'}]
+noremap <leader>www :VimwikiAll2HTML<CR>
+
